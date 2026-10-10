@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Optimasi Produksi Media Kultur Jaringan</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            color: #222;
+            margin: 0;
+            padding: 30px 16px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        h1, h2 {
+            color: #26364a;
+        }
+
+        .hasil {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit, minmax(180px, 1fr)
+            );
+            gap: 14px;
+        }
+
+        .item {
+            background: #f0f4f8;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .label {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .nilai {
+            font-size: 23px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .keuntungan {
+            color: #167447;
+        }
+
+        .grafik {
+            width: 100%;
+            height: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #edf1f5;
+        }
+
+        .catatan {
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="card">
+        <h1>Optimasi Produksi Media Kultur Jaringan</h1>
+        <p>
+            Aplikasi untuk menentukan jumlah produksi Media Agar
+            Cokelat dan Media Agar Hijau agar memperoleh
+            keuntungan maksimum.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Hasil Optimasi</h2>
+
+        <div class="hasil">
+            <div class="item">
+                <div class="label">Media Agar Cokelat</div>
+                <div class="nilai">
+                    {{ "%.2f"|format(data.cokelat) }} liter
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="label">Media Agar Hijau</div>
+                <div class="nilai">
+                    {{ "%.2f"|format(data.hijau) }} liter
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="label">Keuntungan Maksimum</div>
+                <div class="nilai keuntungan">
+                    Rp{{ "{:,.0f}".format(data.keuntungan) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Penggunaan Bahan Baku</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Bahan Baku</th>
+                    <th>Digunakan</th>
+                    <th>Persediaan</th>
+                    <th>Sisa</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Nutrisi organik</td>
+                    <td>
+                        {{ "%.2f"|format(data.nutrisi) }} gram
+                    </td>
+                    <td>16 gram</td>
+                    <td>
+                        {{ "%.2f"|format(data.sisa_nutrisi) }} gram
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Hormon pertumbuhan</td>
+                    <td>
+                        {{ "%.2f"|format(data.hormon) }} gram
+                    </td>
+                    <td>18 gram</td>
+                    <td>
+                        {{ "%.2f"|format(data.sisa_hormon) }} gram
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Grafik Penyelesaian Optimasi</h2>
+
+        <img
+            class="grafik"
+            src="data:image/png;base64,{{ grafik }}"
+            alt="Grafik kendala dan solusi optimal produksi"
+        >
+
+        <p class="catatan">
+            Daerah layak menunjukkan kombinasi produksi yang
+            memenuhi seluruh kendala bahan baku. Titik merah
+            menunjukkan solusi optimal berdasarkan hasil
+            perhitungan Pemrograman Linear.
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
