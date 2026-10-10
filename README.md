@@ -28,19 +28,13 @@ Z = 25.000x + 30.000y
 Kendala nutrisi organik:
 
 \[
-2x + y \leq 16
+2x + y =< 16
 \]
 
 Kendala hormon pertumbuhan:
 
 \[
-x + 3y \leq 18
-\]
-
-Batas nonnegatif:
-
-\[
-x \geq 0,\quad y \geq 0
+x + 3y =< 18
 \]
 
 ## Teknologi dan Pustaka
@@ -139,5 +133,10 @@ Proyek ini dibuat untuk memenuhi tugas Ujian Tengah Semester (UTS) mata kuliah P
 
 ## Pengembang
 
-- Anggota kelompok: [Nama Anggota Kelompok]
+- Anggota kelompok: 
+1. Gede Widhi Wardhana (2408561038)
+2. Kadek Bayu Dwi Pradnya (2408561059)
+3. Ni Luh Putu Ayu Maytta Wulandhani (2408561061)
+4. Tebuana Agung Ayudia Lory (2408561080)
+5. I Putu Maichail Ganio Wijaya (2408561123)
 - Mata kuliah: Pemodelan dan Simulasi
